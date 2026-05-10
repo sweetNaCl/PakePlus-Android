@@ -7,14 +7,14 @@
             content="width=device-width, initial-scale=1.0, viewport-fit=cover"
         />
         <script>
-            let pwdList = ['pakeplus', 'startPwd']
+            let pwdList = ['pakeplus', '123456']
             // clear localStorage when start app
             // localStorage.clear()
             if (localStorage.getItem('appid') === '1') {
-                window.location.replace('https://pakeplus.com/')
+                window.location.replace('./index.html')
             }
         </script>
-        <title>pwdTitle</title>
+        <title>请输入密码</title>
         <style>
             * {
                 margin: 0;
@@ -198,7 +198,7 @@
         <script>
             window.onload = () => {
                 // 设置样式
-                if ('pwdTheme' === 'system') {
+                if ('dark' === 'system') {
                     // document.body.classList.add('system')
                     const mediaQuery = window.matchMedia(
                         '(prefers-color-scheme: dark)'
@@ -211,15 +211,15 @@
                         mediaQuery.addEventListener('change', listener)
                     }
                 } else {
-                    document.body.classList.add('pwdTheme')
+                    document.body.classList.add('dark')
                 }
-                document.getElementById('cardBox').classList.add('pwdStyle')
+                document.getElementById('cardBox').classList.add('flat')
                 // 设置标题
-                document.getElementById('title').textContent = 'pwdTitle'
-                document.getElementById('code').placeholder = 'pwdPlace'
-                document.getElementById('button').textContent = 'pwdBtn'
-                document.getElementById('tip').textContent = 'pwdTip'
-                document.getElementById('error').textContent = 'pwdError'
+                document.getElementById('title').textContent = '请输入密码'
+                document.getElementById('code').placeholder = ''
+                document.getElementById('button').textContent = '验证'
+                document.getElementById('tip').textContent = ''
+                document.getElementById('error').textContent = '密码错误'
                 // 输入时清除错误提示
                 const codeInput = document.getElementById('code')
                 const error = document.getElementById('error')
@@ -247,12 +247,12 @@
                 // 模拟验证延迟（更自然）
                 setTimeout(() => {
                     if (pwdList.includes(val)) {
-                        if ('startMethod' === 'oncePwd') {
+                        if ('none' === 'oncePwd') {
                             localStorage.setItem('appid', '1')
                         } else {
                             localStorage.setItem('appid', '0')
                         }
-                        window.location.replace('https://pakeplus.com/')
+                        window.location.replace('./index.html')
                     } else {
                         // 密码错误，恢复按钮
                         btn.disabled = false
