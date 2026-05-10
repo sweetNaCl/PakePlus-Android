@@ -1718,7 +1718,7 @@
             // 优先使用内存缓存中的尺寸信息，无需等待加载
             const cached = imageCache.get(imgUrl)
             if (cached && cached.loaded && type !== 'kid') {
-                const targetSize = 500
+                const targetSize = 300
                 const w = cached.width
                 const h = cached.height
                 // 统一设置为500x500，保持宽高比
@@ -1746,7 +1746,7 @@
                 const nw = img.naturalWidth
                 const nh = img.naturalHeight
                 if (nw > 0 && nh > 0) {
-                    const targetSize = 500
+                    const targetSize = 300
                     div.style.width = targetSize + 'px'
                     div.style.height = targetSize + 'px'
                 }
@@ -2352,7 +2352,7 @@
                         if (item.type === 'kid') {
                             applyKidDisplaySize(div, img)
                         } else {
-                            const targetSize = 500
+                            const targetSize = 300
                             div.style.width = targetSize + 'px'
                             div.style.height = targetSize + 'px'
                         }
@@ -2375,7 +2375,7 @@
                             div.style.width = '160px'
                             div.style.height = '200px'
                         } else {
-                            const targetSize = 500
+                            const targetSize = 300
                             div.style.width = targetSize + 'px'
                             div.style.height = targetSize + 'px'
                         }
